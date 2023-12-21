@@ -1,0 +1,6 @@
+class EventStream:
+    events:typing.list[Events]
+    version:int
+
+    def __init__(self, events,vesion) -> None:
+        pass
