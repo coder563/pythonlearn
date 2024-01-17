@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 class Circle:
 
 
@@ -21,19 +22,36 @@ class Circle:
             print(f'bool value of NotImplemented ={NotImplemented.__bool__()}') 
             print(f'bool value of NotImplemented ={NotImplemented.__value__}') 
             return NotImplemented
-        
-        
+@dataclass
+class CircleD:
+    x:int
+    y:int
+    radius:int
 
 
-    
+
+if __name__ =='__main__':
+    c = CircleD(3,4, 10)
+    print(c)
 
 
 
-if __name__ == '__main__':
-   c1 = Circle(9,9,10)
-   s1 = Square(9)
-   x = (c1==s1)
-   print(x)
-   #assert c1 == s1
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
     
