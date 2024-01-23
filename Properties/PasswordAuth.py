@@ -1,11 +1,26 @@
 from dataclasses import dataclass
 import pprint
 
-@dataclass(frozen=True)
-class PasswordAuth:
-    passwordassword:str = None
-    retry_cound:int=0
 
+class PasswordAuth:
+
+
+    def __init__(self, name, password):
+        self.name = name
+        self.password:str = None
+
+
+    @property
+    def password(self):
+        raise AttributeError('Password is write only')
+
+    @password.setter
+    def password(self,new_password):
+        password = new_password    
+    
+
+
+    
 
     
 
@@ -15,6 +30,5 @@ if __name__ == '__main__':
 
     pprint.pprint(P1.__dict__)
     pprint.pprint(dir(P1))
-    pprint.pprint(locals())
-    
+    pprint.pprint(locals()['P1'].__doc__)
 
