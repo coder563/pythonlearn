@@ -22,7 +22,7 @@ class Circle:
             print(f'bool value of NotImplemented ={NotImplemented.__bool__()}') 
             print(f'bool value of NotImplemented ={NotImplemented.__value__}') 
             return NotImplemented
-@dataclass
+@dataclass(frozen=True)
 class CircleD:
     x:int
     y:int
@@ -31,8 +31,14 @@ class CircleD:
 
 
 if __name__ =='__main__':
-    c = CircleD(3,4, 10)
-    print(c)
+    c1 = CircleD(3,4, 10)
+ 
+    c2 = CircleD(3,5,10)
+    
+    c3 = CircleD(3,4,10)
+
+    print(f'ID c1 ,c2, c3 = {id(c1)} {id(c2)} {id(c3)}')
+    print(f'Hashes c1 ,c2, c3 = {hash(c1)} {hash(c2)} {hash(c3)}')
 
 
 
