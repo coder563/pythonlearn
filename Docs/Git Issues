@@ -1,0 +1,2 @@
+1. If ignore is not working clear the curret cache  as below. Refer here : https://gist.github.com/pavankjadda/2bb6fbdd8786e1f57fd7bcbcc666b51d
+        git rm -r --cached .
