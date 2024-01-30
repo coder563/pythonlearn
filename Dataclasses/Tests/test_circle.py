@@ -1,4 +1,4 @@
-import Circle 
+import Circle
 
 
 def test__eq__():

@@ -4,7 +4,7 @@ class Circle:
 
 
     def __init__(self,radius) -> None:
-        self.__radius = radius
+        self._radius = radius
 
 
 
