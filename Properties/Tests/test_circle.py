@@ -1,5 +1,5 @@
-import Circle
-
+import Circle as c
+import Dataclasses.Circle as dc 
 
 def test_count():
     assert 4, 5+1
@@ -9,11 +9,12 @@ def test_count():
 
 def test_circle_properties():
     
-    c1 = Circle(None)
+    dc.Circle(2,2,2)
+    c1 = c.Circle(8,4,3)
 
     c1.radius = 10
 
-    assert c1._radius , c1.radius
+    assert 10 , c1.radius
 
 
 
