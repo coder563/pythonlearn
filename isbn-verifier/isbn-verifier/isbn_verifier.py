@@ -37,25 +37,14 @@ def format_validator(isbn:str)->bool:
 def value_check(isbn:str)->bool:
     #TODO:'Check value'
 
-    position  = list(range(1,11))
-
-    if isbn[-1] == 'X':
-        isbn_parsed = list(isbn[:-1])
-        isbn_parsed.append('10')
-        print(f'list with x = {isbn_parsed=}')
-    else:
-        isbn_parsed = list(isbn)
+    position  = list(range(10,0,-1))
+    isbn_parsed = list(isbn)
+    if isbn[-1] == 'X':isbn_parsed[-1]='10'
+    print(f'{isbn_parsed=}')
+    prod = list(map(lambda l1, l2:l1*int(l2),position,isbn_parsed))
+    val = ft.reduce(lambda a, b:a+b,prod) % 11
     
-
-    isbn_parsed = list(map(int,isbn_parsed))
-    
-   
-
-    prod = list(map(lambda l1, l2:l1*l2,position,isbn_parsed))
-    summation = ft.reduce(lambda a, b:a+b,prod) 
-    val = summation % 11
-
-    print(f'{isbn_parsed}, {prod=}, {summation=}, {val=}')
+    print(f'{isbn_parsed}, {prod=}, {val=}')
     
     if val == 0:return True
     else: return False
