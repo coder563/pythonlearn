@@ -1,6 +1,7 @@
 import functools as ft
 import re
 import logging
+import timeit, time
 logging.basicConfig(level=logging.DEBUG,
                     filename="ISBN_verifier.log",
                     filemode='w',
@@ -8,8 +9,21 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%d-%b-%y %H:%M:%S'
                     )
 
+def timeme(func):
+    def wrapper(*args, **kwargs):
+        startime= {round(time.time()*100)}
+        func(*args,**kwargs)
+        endime= {round(time.time()*100)}
+        logging.debug(f'elapsed time = {endime-startime}')
+    return wrapper
+        
+                      
 
 
+
+
+
+@timeme
 def is_valid(isbn:str)->bool:
     formatted_isbn = format_validator(isbn)
     if formatted_isbn:
@@ -43,4 +57,5 @@ def value_check(isbn:str)->bool:
 
 if __name__ == '__main__':
     logging.debug('Inside Main')
-    logging.debug(f'checking for {is_valid('3-59A-21507-X')=}')
+    logging.debug(f'checking for {is_valid('3-59A-21507-X') = }')
+
