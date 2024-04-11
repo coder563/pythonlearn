@@ -4,3 +4,4 @@ venv_exercism/
 myvenv/
 
 __pycache__/
+*log
